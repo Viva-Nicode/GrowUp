@@ -16,4 +16,8 @@ target 'GrowUp' do
     # Pods for testing
   end
   pod 'Alamofire'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
 end

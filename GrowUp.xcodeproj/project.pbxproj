@@ -17,6 +17,7 @@
 		FC3FC0032A53E600001DBFFD /* GrowUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC0022A53E600001DBFFD /* GrowUpTests.swift */; };
 		FC3FC00D2A53E600001DBFFD /* GrowUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC00C2A53E600001DBFFD /* GrowUpUITests.swift */; };
 		FC3FC00F2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC00E2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift */; };
+		FC6D5FE92A562203003E1D0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		FC3FC0082A53E600001DBFFD /* GrowUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3FC00C2A53E600001DBFFD /* GrowUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowUpUITests.swift; sourceTree = "<group>"; };
 		FC3FC00E2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,6 @@
 				15A740C37863D57D413D2B74 /* Pods-GrowUpTests.debug.xcconfig */,
 				C9B36691C3FC01FE6998A3D9 /* Pods-GrowUpTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -135,6 +136,7 @@
 		FC3FBFF02A53E5FF001DBFFD /* GrowUp */ = {
 			isa = PBXGroup;
 			children = (
+				FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */,
 				FC3FBFF12A53E5FF001DBFFD /* GrowUpApp.swift */,
 				FC3FBFF32A53E5FF001DBFFD /* ContentView.swift */,
 				FC3FBFF52A53E600001DBFFD /* Assets.xcassets */,
@@ -279,6 +281,7 @@
 			files = (
 				FC3FBFF92A53E600001DBFFD /* Preview Assets.xcassets in Resources */,
 				FC3FBFF62A53E600001DBFFD /* Assets.xcassets in Resources */,
+				FC6D5FE92A562203003E1D0C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
