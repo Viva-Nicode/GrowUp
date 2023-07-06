@@ -18,6 +18,8 @@
 		FC3FC00D2A53E600001DBFFD /* GrowUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC00C2A53E600001DBFFD /* GrowUpUITests.swift */; };
 		FC3FC00F2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC00E2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift */; };
 		FC6D5FE92A562203003E1D0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */; };
+		FCB594602A57835D00DBBA0B /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB5945F2A57835D00DBBA0B /* EpisodeView.swift */; };
+		FCB594622A57848200DBBA0B /* ToonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB594612A57848200DBBA0B /* ToonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		FC3FC00C2A53E600001DBFFD /* GrowUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowUpUITests.swift; sourceTree = "<group>"; };
 		FC3FC00E2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCB5945F2A57835D00DBBA0B /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
+		FCB594612A57848200DBBA0B /* ToonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				FC3FBFF32A53E5FF001DBFFD /* ContentView.swift */,
 				FC3FBFF52A53E600001DBFFD /* Assets.xcassets */,
 				FC3FBFF72A53E600001DBFFD /* Preview Content */,
+				FCB5945F2A57835D00DBBA0B /* EpisodeView.swift */,
+				FCB594612A57848200DBBA0B /* ToonView.swift */,
 			);
 			path = GrowUp;
 			sourceTree = "<group>";
@@ -409,7 +415,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB594622A57848200DBBA0B /* ToonView.swift in Sources */,
 				FC3FBFF42A53E5FF001DBFFD /* ContentView.swift in Sources */,
+				FCB594602A57835D00DBBA0B /* EpisodeView.swift in Sources */,
 				FC3FBFF22A53E5FF001DBFFD /* GrowUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
