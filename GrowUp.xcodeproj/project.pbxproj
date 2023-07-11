@@ -18,6 +18,7 @@
 		FC3FC00D2A53E600001DBFFD /* GrowUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC00C2A53E600001DBFFD /* GrowUpUITests.swift */; };
 		FC3FC00F2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FC00E2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift */; };
 		FC6D5FE92A562203003E1D0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */; };
+		FCA95C372A57EE630007931F /* ImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA95C362A57EE630007931F /* ImageSlide.swift */; };
 		FCB594602A57835D00DBBA0B /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB5945F2A57835D00DBBA0B /* EpisodeView.swift */; };
 		FCB594622A57848200DBBA0B /* ToonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB594612A57848200DBBA0B /* ToonView.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,9 @@
 		FC3FC00C2A53E600001DBFFD /* GrowUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowUpUITests.swift; sourceTree = "<group>"; };
 		FC3FC00E2A53E600001DBFFD /* GrowUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC6DA1622A5D380900A9EAB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FC6DA1632A5D3A1D00A9EAB9 /* GrowUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GrowUp.entitlements; sourceTree = "<group>"; };
+		FCA95C362A57EE630007931F /* ImageSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlide.swift; sourceTree = "<group>"; };
 		FCB5945F2A57835D00DBBA0B /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 		FCB594612A57848200DBBA0B /* ToonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +144,8 @@
 		FC3FBFF02A53E5FF001DBFFD /* GrowUp */ = {
 			isa = PBXGroup;
 			children = (
+				FC6DA1632A5D3A1D00A9EAB9 /* GrowUp.entitlements */,
+				FC6DA1622A5D380900A9EAB9 /* Info.plist */,
 				FC6D5FE82A562202003E1D0C /* GoogleService-Info.plist */,
 				FC3FBFF12A53E5FF001DBFFD /* GrowUpApp.swift */,
 				FC3FBFF32A53E5FF001DBFFD /* ContentView.swift */,
@@ -147,6 +153,7 @@
 				FC3FBFF72A53E600001DBFFD /* Preview Content */,
 				FCB5945F2A57835D00DBBA0B /* EpisodeView.swift */,
 				FCB594612A57848200DBBA0B /* ToonView.swift */,
+				FCA95C362A57EE630007931F /* ImageSlide.swift */,
 			);
 			path = GrowUp;
 			sourceTree = "<group>";
@@ -416,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB594622A57848200DBBA0B /* ToonView.swift in Sources */,
+				FCA95C372A57EE630007931F /* ImageSlide.swift in Sources */,
 				FC3FBFF42A53E5FF001DBFFD /* ContentView.swift in Sources */,
 				FCB594602A57835D00DBBA0B /* EpisodeView.swift in Sources */,
 				FC3FBFF22A53E5FF001DBFFD /* GrowUpApp.swift in Sources */,
@@ -575,17 +583,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GrowUp/GrowUp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GrowUp/Preview Content\"";
 				DEVELOPMENT_TEAM = 2GZ2322ZL4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GrowUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +605,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.test.GrowUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,17 +618,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GrowUp/GrowUp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GrowUp/Preview Content\"";
 				DEVELOPMENT_TEAM = 2GZ2322ZL4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GrowUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,6 +640,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.test.GrowUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

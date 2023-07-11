@@ -6,18 +6,17 @@ import Firebase
 var dictionary: [String: String] = ["lookism": "외모지상주의", "tower_of_god": "신의탑", "kim_director": "김부장","fight_self_taught" : "싸움독학" ]
 
 struct ContentView: View {
-    let coloredNavAppearance = UINavigationBarAppearance()
+    let navigationBarAppearance = UINavigationBarAppearance()
     @State private var updateDic = Dictionary<String, Any>()
     @State private var date: [String] = []
-        
+    
+//    Image(systemName: "chevron.backward")
     init() {
-        coloredNavAppearance.configureWithOpaqueBackground()
-        coloredNavAppearance.backgroundColor = UIColor.clear
-        coloredNavAppearance.shadowColor = .clear
-        //coloredNavAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        //coloredNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+        navigationBarAppearance.backgroundColor = UIColor.clear
+        navigationBarAppearance.shadowColor = .clear
+//        coloredNavAppearance.configureWithOpaqueBackground()
+//        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
     }
     
     var body: some View {
@@ -25,90 +24,42 @@ struct ContentView: View {
             NavigationView {
                 VStack {
                     VStack{
-                        Text("🌱🌳Grow Up🌳🌱").font(.system(size: 45))
+                        Text("Grow Up").font(.system(size: 45))
                         Spacer().frame(height: 10)
-                        Text("Created by Nicode / version 1.0.0").font(.system(size: 20))
-                    }.frame(height: 180)
-                    Divider().background(Color.black).padding(.horizontal).frame(height: 30)
+                        Text("Created by Nicode").font(.system(size: 20))
+                    }.frame(height: 180).background(Color.clear)
+                    
                     List{
-                        NavigationLink(destination:EpisodeView(toonTitle:"lookism")){
-                            HStack{
-                                Image("lookism").resizable().frame(width: 120, height: 170)
-                                Spacer().frame(width: 50)
-                                VStack(alignment:.leading){
-                                    Text("외모지상주의").font(.system(size:30))
-                                    Spacer().frame(height:20)
-                                    if updateDic.isEmpty {
-                                        Text("loading...")
-                                    } else {
-                                        if let stringValue = updateDic["lookism"] as? String {
-                                            Text(stringValue).font(.system(size:20))
+                        ForEach(dictionary.sorted(by: <), id: \.key) { key, value in
+                            NavigationLink(destination:EpisodeView(toonTitle:key)){
+                                HStack{
+                                    Image(key).resizable().frame(width: 90, height: 140).cornerRadius(20)
+                                    Spacer().frame(width: 50)
+                                    VStack(alignment:.leading){
+                                        Text(value).font(.system(size:30))
+                                        Spacer().frame(height:20)
+                                        if updateDic.isEmpty {
+                                            Text("loading...").background(.clear)
+                                        } else {
+                                            if let stringValue = updateDic[key] as? String {
+                                                Text(stringValue).font(.system(size:20))
+                                            }
                                         }
-                                    }
-                                }
-                            }.listRowInsets(EdgeInsets())
+                                    }.frame(minWidth: 100)
+                                }.listRowInsets(EdgeInsets())
+                            }
                         }
-                        Spacer().frame(height: 10)
-                        NavigationLink(destination:EpisodeView(toonTitle:"tower_of_god")){
-                            HStack{
-                                Image("tower_of_god").resizable().frame(width: 120, height: 170)
-                                Spacer().frame(width: 50)
-                                VStack(alignment:.leading){
-                                    Text("신의탑").font(.system(size:30))
-                                    Spacer().frame(height:20)
-                                    if updateDic.isEmpty {
-                                        Text("loading...")
-                                    } else {
-                                        if let stringValue = updateDic["tower_of_god"] as? String {
-                                            Text(stringValue).font(.system(size:20))
-                                        }
-                                    }
-                                }
-                            }.listRowInsets(EdgeInsets())
-                        }
-                        Spacer().frame(height: 10)
-                        NavigationLink(destination:EpisodeView(toonTitle:"kim_director")){
-                            HStack{
-                                Image("kim_director").resizable().frame(width: 120, height: 170)
-                                Spacer().frame(width: 50)
-                                VStack(alignment:.leading){
-                                    Text("김부장").font(.system(size:30))
-                                    Spacer().frame(height:20)
-                                    if updateDic.isEmpty {
-                                        Text("loading...")
-                                    } else {
-                                        if let stringValue = updateDic["kim_director"] as? String {
-                                            Text(stringValue).font(.system(size:20))
-                                        }
-                                    }
-                                }
-                            }.listRowInsets(EdgeInsets())
-                        }
-                        Spacer().frame(height: 10)
-                        NavigationLink(destination:EpisodeView(toonTitle: "fight_self_taught")){
-                            HStack{
-                                Image("fight_self_taught").resizable().frame(width: 120, height: 170)
-                                Spacer().frame(width: 50)
-                                VStack(alignment:.leading){
-                                    Text("싸움독학").font(.system(size:30))
-                                    Spacer().frame(height:20)
-                                    if updateDic.isEmpty {
-                                        Text("loading...")
-                                    } else {
-                                        if let stringValue = updateDic["fight_self_taught"] as? String {
-                                            Text(stringValue).font(.system(size:20))
-                                        }
-                                    }
-                                }
-                            }.listRowInsets(EdgeInsets())
-                        }
-                        Spacer().frame(height: 10)
-                    }.listStyle(.plain).listRowInsets(EdgeInsets()).scrollIndicators(.hidden)
-                }
-            }.frame(maxWidth: .infinity).tabItem{Label("Home",systemImage: "house.fill")}.tag(0)
+                    }.listStyle(.insetGrouped).listRowInsets(EdgeInsets()).scrollIndicators(.hidden).cornerRadius(28).padding(.bottom, 10)
+                }.background(LinearGradient(gradient: Gradient(colors:
+                                                                [Color(red: 77/255, green: 113/255, blue: 167/255),
+                                                                 Color(red:242/255, green:196/255, blue: 232/255)]),
+                                            startPoint: .topLeading, endPoint: .bottomTrailing))
+            }
+            .frame(maxWidth: .infinity).tabItem{Label("Home",systemImage: "house.fill")}.tag(0)
             ImageSlide().tabItem{Image(systemName: "gearshape")
                 Text("Setting")}.tag(1)
-        }.accentColor(.purple).onAppear{
+        }.edgesIgnoringSafeArea(.all)
+        .accentColor(.orange).onAppear{
             UITabBar.appearance().backgroundColor = .clear
         }.onAppear{
             loadUpdateTime()
@@ -133,44 +84,16 @@ struct ContentView: View {
                 }
             }
         }
-//        AF.request("http://\(ip):5000/get_recent_update").responseDecodable(of: [String].self) { [self] response in
-//            switch response.result {
-//            case .success:
-//                if let arrays = response.value {
-//                    self.date = arrays
-//                }else{}
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
-    }
-}
-
-struct ImageSlide : View {
-    private let images = ["slide_1", "slide_2", "slide_3", "slide_4", "slide_5", "slide_6"]
-    
-    var body: some View {
-        TabView {
-            ForEach(images, id: \.self) { item in
-                ZStack{
-                    Image(item).resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .edgesIgnoringSafeArea(.top)
-                    Text("Have a nice day").font(.system(size:30))
-                        .frame(maxWidth: 250, maxHeight: 110, alignment: .center)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(red: 0.780, green: 1.0, blue: 0.973), Color(red: 1.0, green: 0.800, blue: 0.914)]), startPoint: .topLeading, endPoint: .bottomTrailing)).cornerRadius(30).foregroundColor(Color(red: 158/255, green: 179/255, blue: 1))
-                }
-            }
-        }
-        .tabViewStyle(PageTabViewStyle()).edgesIgnoringSafeArea(.top)
-        .onAppear {
-            setupAppearance()
-        }
-    }
-    
-    func setupAppearance() {
-        UIPageControl.appearance().currentPageIndicatorTintColor = .white
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.4)
+        //        AF.request("http://\(ip):5000/get_recent_update").responseDecodable(of: [String].self) { [self] response in
+        //            switch response.result {
+        //            case .success:
+        //                if let arrays = response.value {
+        //                    self.date = arrays
+        //                }else{}
+        //            case .failure(let error):
+        //                print("Error: \(error)")
+        //            }
+        //        }
     }
 }
 
